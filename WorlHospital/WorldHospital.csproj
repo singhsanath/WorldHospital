@@ -193,6 +193,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\WHStyles\WhMainElementStyle.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -232,6 +233,11 @@
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\WHApp\Controller\Routing.js" />
+    <Content Include="Scripts\WHApp\WHApp.js" />
+    <Content Include="Content\WHStyles\Dashboard.css" />
+    <Content Include="Scripts\WHApp\WHDirectives\WHDashboard.js" />
+    <Content Include="Scripts\WHApp\WHDirectives\WhHeaderDirective.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -243,6 +249,11 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
+    <Content Include="WHView\Dashboard\DashBoard.html" />
+    <Content Include="WHView\Header\HeaderView.html" />
+    <Content Include="WHView\Header\WhAuthAfter.html" />
+    <Content Include="Views\Auth\Login.cshtml" />
+    <Content Include="Views\Auth\Registration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

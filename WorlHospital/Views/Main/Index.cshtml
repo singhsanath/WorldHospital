@@ -1,9 +1,44 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="WHApp">
 <head>
     <title>World Hospital</title>
-</head>
-<body>
 
+   @*This is link are Bootstrap*@
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/WHStyles/WhMainElementStyle.css" rel="stylesheet" />
+    <link href="~/Content/WHStyles/Dashboard.css" rel="stylesheet" />
+
+
+    @*This script are AngularJS Script*@
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/Scripts/WHApp/WHApp.js"></script>
+    <script src="~/Scripts/WHApp/WHDirectives/WhHeaderDirective.js"></script>
+    <script src="~/Scripts/WHApp/Controller/Routing.js"></script>
+    <script src="~/Scripts/WHApp/WHDirectives/WHDashboard.js"></script>
+
+</head>
+<body ng-controller="WHController">
+    <header>
+        
+        <wh-header>
+          
+            <wh-auth-after>
+
+            </wh-auth-after>
+        </wh-header>
+    </header>
+    <div>
+        <div class="left-dashboard">
+           <wh-dashboard>
+
+           </wh-dashboard>
+        </div>
+        <div class="display-block">
+            <div ng-view></div>
+        </div>
+    </div>
+    
 </body>
 </html>

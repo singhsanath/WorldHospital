@@ -1,0 +1,48 @@
+﻿.left-dashboard{
+    height:100%;
+    width:15%;
+    background-color:black;
+    display:inline-block;
+    float:left;
+    color:white;
+
+   
+}
+.container{
+     padding:0;
+     width:15%;
+}
+.display-block{
+    width:85%;
+    height:100%;
+    float:right;
+    display:inline-block;
+
+}
+.dash-content-align {
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+   
+}
+.label-dashboard{
+      font-family: Arial;
+  padding: 0;
+  margin: 0;
+    font-family: Arial;
+  padding: 0;
+  margin: 0;
+}
+.contenttype{
+      display: block;
+  height: 35px;
+  padding: 23px 22px 0px 22px;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 1010;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+}
