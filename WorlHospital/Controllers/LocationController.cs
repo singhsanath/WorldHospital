@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using WorlHospital.Models;
 namespace WorlHospital.Controllers
 {
     public class LocationController : Controller
     {
+
+        patientRegLogContext database = new patientRegLogContext( );
+       
         //
         // GET: /Location/
 
@@ -16,9 +19,13 @@ namespace WorlHospital.Controllers
            
             return Json( "countries" );
         }
+        [AllowAnonymous]
+        [HttpPost]
         public JsonResult states(string country)
         {
-            return Json( "states object" );
+            var state = database.Location.Where(b=>b.country==country);
+            
+            return Json( state );
         }
     }
 }

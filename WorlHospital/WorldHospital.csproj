@@ -132,6 +132,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506011235186_patientRegLogContext.cs" />
+    <Compile Include="Migrations\201506011235186_patientRegLogContext.Designer.cs">
+      <DependentUpon>201506011235186_patientRegLogContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506011305271_patientRegLogContext1.cs" />
+    <Compile Include="Migrations\201506011305271_patientRegLogContext1.Designer.cs">
+      <DependentUpon>201506011305271_patientRegLogContext1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\PatientsAuth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -307,6 +317,8 @@
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\WHApp\Controller\Address.js" />
+    <Content Include="Scripts\WHApp\Controller\DataBaseControllers.js" />
     <Content Include="Scripts\WHApp\Controller\Routing.js" />
     <Content Include="Scripts\WHApp\WHApp.js" />
     <Content Include="Content\WHStyles\Dashboard.css" />
@@ -331,10 +343,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201506011235186_patientRegLogContext.resx">
+      <DependentUpon>201506011235186_patientRegLogContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506011305271_patientRegLogContext1.resx">
+      <DependentUpon>201506011305271_patientRegLogContext1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

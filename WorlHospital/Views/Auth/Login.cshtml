@@ -2,4 +2,34 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
+<div class="register-position">
+    <div class="registration-background">
+        <form name="loginform" method="post" ng-submit="loginSubmit(regData)">
+            <table class="table-responsive">
+                <thead>
+                    <h1>Patient Login </h1>
+                </thead>
+                <tr>
+                    <td><strong> Patient ID</strong></td>
+                    <td><input type=text class="input-lg form-group input-position" ng-model="loginData.PID" name="PID" placeholder="Patient Name" /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Password</label>
+                    </td>
+                    <td><input type="password" ng-model="loginData.password" class="input-lg form-group input-position" /></td>
+                </tr>
+                <tr>
+                    <td style="width:100px">
+                        <button class="btn btn-primary btn-success" type="submit" style="float:right">Login</button>
+
+                    </td>
+                    <td>
+                        <button class=" btn btn-warning" type="reset" style="float:left">Clear</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>

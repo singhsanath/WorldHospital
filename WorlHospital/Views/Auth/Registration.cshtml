@@ -11,7 +11,7 @@
                 </thead>
                 <tr>
                     <td><strong> Patient Name</strong></td>
-                    <td><input type=text class="input-lg form-group input-position" ng-model="regData.PName" name="pName" placeholder="Patient Name" /></td>
+                    <td><input type=text class="input-lg form-group input-position" ng-model="regData.PName" name="PName" placeholder="Patient Name" /></td>
                     <td></td>
                 </tr>
                 <tr>
@@ -60,21 +60,23 @@
                     <td>
                         <label> Address</label>
                     </td>
-                    <td>
+                    <td ng-controller="AddressController">
                         <div>
                             <label>Country</label>
-                            <select ng-model="regData.Country" name="country" required class="input-sm form-group input-position">
+                            <select ng-model="regData.Country" name="country" ng-change="getStates(regData.Country)" class="input-sm form-group input-position">
                                 <option value="">Select Country</option>
-                                <option value="Select Country">Select Country</option>
                                 <option value="{{country}}" ng-repeat="country in countries">{{country}}</option>
                             </select>
+                            <label>{{regData.Country}}</label>
                         </div>
                         <div>
                             <label ng-show="true">State </label>
                             <select ng-model="regData.State" class="input-sm form-group input-position" name="state">
                                 <option value="">Select State</option>
-                                <option value="{{state}}" ng-repeat="state in states">{{state}}</option>
+                                <option value="AP">AP</option>
+                                <option value="{{state.state}}" ng-repeat="state in states">{{state.state}}</option>
                             </select>
+                            <label>{{regData.State}}</label>
                         </div>
                     </td>
                     <td></td>

@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WorlHospital.Models;
 
 namespace WorlHospital.Controllers
 {
     public class AuthController : Controller
     {
+        public static int PID = 1;
+        patientRegLogContext database = new patientRegLogContext( );
         //
         // GET: /Auth/
 
@@ -26,9 +29,14 @@ namespace WorlHospital.Controllers
        }
         [AllowAnonymous]
         [HttpPost]
-        public JsonResult Registration(string Client_Data)
+        public JsonResult Registration( PatientRegistration PatientReg )
         {
-            return Json( Client_Data );
+            PID++;
+            PatientReg.PID=PID.ToString();
+            database.PatientDetails.Add( PatientReg );
+            database.SaveChanges( );
+
+            return Json( PatientReg );
         }
 
         public JsonRequestBehavior Login( string Client_login )
