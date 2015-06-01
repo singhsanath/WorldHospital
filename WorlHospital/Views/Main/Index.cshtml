@@ -8,6 +8,7 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/WHStyles/WhMainElementStyle.css" rel="stylesheet" />
     <link href="~/Content/WHStyles/Dashboard.css" rel="stylesheet" />
+    <link href="~/Content/WHStyles/DatePicker.css" rel="stylesheet" />
 
 
     @*This script are AngularJS Script*@
@@ -17,13 +18,14 @@
     <script src="~/Scripts/WHApp/WHDirectives/WhHeaderDirective.js"></script>
     <script src="~/Scripts/WHApp/Controller/Routing.js"></script>
     <script src="~/Scripts/WHApp/WHDirectives/WHDashboard.js"></script>
-
+    <script src="~/Scripts/DatePicker.js"></script>
+    
 </head>
-<body ng-controller="WHController">
+<body ng-controller="WHController" style="background-color: rosybrown;">
     <header>
-        
+
         <wh-header>
-          
+
             <wh-auth-after>
 
             </wh-auth-after>
@@ -31,14 +33,14 @@
     </header>
     <div>
         <div class="left-dashboard">
-           <wh-dashboard>
+            <wh-dashboard>
 
-           </wh-dashboard>
+            </wh-dashboard>
         </div>
         <div class="display-block">
             <div ng-view></div>
         </div>
     </div>
-    
+
 </body>
 </html>

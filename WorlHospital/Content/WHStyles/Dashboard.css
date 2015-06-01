@@ -46,3 +46,15 @@
   text-decoration: none;
   font-weight: bold;
 }
+.register-position{
+    display:block inline-block ;
+   
+}
+.registration-background{
+   margin-left:400px;
+   margin-top:50px;
+    border:1px ;
+    width:50%;
+
+
+}
