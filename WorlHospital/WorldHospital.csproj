@@ -322,6 +322,7 @@
     <Content Include="Scripts\WHApp\Controller\Routing.js" />
     <Content Include="Scripts\WHApp\WHApp.js" />
     <Content Include="Content\WHStyles\Dashboard.css" />
+    <Content Include="Scripts\WHApp\WHDirectives\RegValidation.js" />
     <Content Include="Scripts\WHApp\WHDirectives\WHDashboard.js" />
     <Content Include="Scripts\WHApp\WHDirectives\WhHeaderDirective.js" />
     <Content Include="Scripts\_references.js" />

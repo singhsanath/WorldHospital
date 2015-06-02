@@ -3,11 +3,11 @@ angular.module( 'AddressModule', [] ).controller( "AddressController", function 
     $scope.countries = ["India", "USA"];
 
     $scope.getStates = function ( SCountry ) {
-        $http.post( 'Location/states', JSON.stringify(SCountry) ).success( function ( data ) {
+        $http.post( 'Location/states', angular.toJson(SCountry) ).success( function ( data ) {
             //$scope.states = JSON.stringify( data );
             console.log( data );
         } ).error(function(){
-            //alert("Server busy");
+            alert("Server busy");
         })
     }
 
