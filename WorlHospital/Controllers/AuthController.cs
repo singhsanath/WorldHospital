@@ -33,6 +33,7 @@ namespace WorlHospital.Controllers
         {
             PID++;
             PatientReg.PID=PID.ToString();
+            PatientReg.Password="123456aA";
             database.PatientDetails.Add( PatientReg );
             database.SaveChanges( );
 

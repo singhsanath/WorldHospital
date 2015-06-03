@@ -3,33 +3,46 @@
 }
 
 <div class="register-position">
-    <div class="registration-background">
-        <form name="regform" method="post" ng-submit="regSubmit(regData)">
+    <div class="registration-background" ng-controller="PatientAuthController">
+        <form name="regform" method="post" ng-submit="regSubmit(regData)" novalidate>
             <table class="table-responsive">
                 <thead>
                     <h1>Patient Registration Form</h1>
                 </thead>
                 <tr>
                     <td><strong> Patient Name</strong></td>
-                    <td><input type=text class="input-lg form-group input-position" ng-model="regData.PName" name="PName" placeholder="Patient Name" /></td>
+                    <td>
+                        <input type=text class="input-lg form-group input-position" ng-model="regData.PName" name="PName" placeholder="Patient Name" d-validation ng-pattern="/[a-zA-Z]+$/" ng-minlength="4" required />
+                        <span class="error" ng-show="!regform.PName.$dirty">required</span>  
+                        <span class="error" ng-show="regform.PNamee.$error.pattern">Not a valid number!</span>  
+                    </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td><strong> Father Name</strong></td>
-                    <td><input type=text class="input-lg form-group input-position" ng-model="regData.PFName" name="PFName" placeholder="Father Name" /></td>
+                    <td>
+                        <input type=text class="input-lg form-group input-position" ng-model="regData.PFName" name="PFName" placeholder="Father Name" d-validation ng-pattern="/[a-zA-Z]+$/" required />
+                        <span class="error" ng-show="!regform.PFName.$dirty">required</span>
+                    </td>
                     <td></td>
                 </tr>
                 <tr style="column-span:1px">
                     <td><strong>  Age</strong></td>
-                    <td><input type=text class="input-lg form-group input-position" ng-model="regData.PAge" name="PAge" placeholder="Age" /></td>
+                    <td>
+                        <input type=text class="input-lg form-group input-position" ng-model="regData.PAge" name="PAge" placeholder="Age" d-validation ng-pattern="/^[0-9]{0,3}$/" required />
+                        <span class="error" ng-show="!regform.PAge.$dirty">required</span>
+                        <span class="error" ng-show="regform.PAge.$error.pattern">Not a valid number!</span>
+                    </td>
                     <td></td>
                     </trstyle>
                 <tr>
                     <td><strong> Date-Of-Birth</strong></td>
                     <td>
                         <datepicker date-format="dd-MM-yyyy">
-                            <input ng-model="date" type="text" class="input-lg form-group input-position" name="DOB" placeholder="Date Of Birth" />
+                            <input ng-model="regData.DOB" type="text" class="input-lg form-group input-position" ng-readonly="true" name="DOB" placeholder="Date Of Birth" d-validation required />
+                            <span class="error" ng-show="!regform.DOB.$dirty">required</span>
                         </datepicker>
+
                     </td>
                     <td></td>
                 </tr>
@@ -37,60 +50,67 @@
                 <tr>
                     <td><strong> Blood Group</strong></td>
                     <td>
-                        <select ng-model="regData.BGroup" class="input-sm form-group input-position" name="BGroup">
+                        <select ng-model="regData.BGroup" class="input-sm form-group input-position" name="BGroup" required>
                             <option value="">Select Blood group</option>
-                            <option value="A+">A+</option>
-                            <option value="A-">A-</option>
-                            <option value="B+">B+</option>
-                            <option value="AB+">AB+</option>
-                            <option value="AB-">AB-</option>
-                            <option value="O+">O+</option>
-                            <option value="O-">O-</option>
+                            <option value="   A+   ">A+</option>
+                            <option value="   A-   ">A-</option>
+                            <option value="   B+  ">B+</option>
+                            <option value="  AB+  ">AB+</option>
+                            <option value="  AB- ">AB-</option>
+                            <option value="  O+  ">O+</option>
+                            <option value="  O-  ">O-</option>
 
                         </select>
+                        <span class="error" ng-show="!regform.BGroup.$dirty">required</span>
                     </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td><strong>Mobile Number</strong></td>
-                    <td><input type=text class="input-lg form-group input-position" ng-model="regData.MNumber" name="MNumber" placeholder="Mobile Number" /></td>
+                    <td>
+                        <input type=text class="input-lg form-group input-position" ng-model="regData.MNumber" name="MNumber" required placeholder="Mobile Number" d-validation ng-pattern="/^[0-9]{10,11}$/" />
+                        <span class="error" ng-show="!regform.MNumber.$dirty">required</span>
+                    </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>
-                        <label> Address</label>
+                        <strong>    Country</strong>
+</td>
+                    <td>
+                        <select ng-model="regData.Country" name="Country" required class="input-sm form-group input-position" >
+                            <option value="">Select Country</option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                        </select>
+                        <span class="error" ng-show="!regform.Country.$dirty">required</span>
                     </td>
-                    <td ng-controller="AddressController">
-                        <div>
-                            <label>Country</label>
-                            <select ng-model="regData.Country" name="country" ng-change="getStates(regData.Country)" class="input-sm form-group input-position">
-                                <option value="">Select Country</option>
-                                <option value="{{country}}" ng-repeat="country in countries">{{country}}</option>
-                            </select>
-                            <label>{{regData.Country}}</label>
-                        </div>
-                        <div>
-                            <label ng-show="true">State </label>
-                            <select ng-model="regData.State" class="input-sm form-group input-position" name="state">
-                                <option value="">Select State</option>
-                                <option value="AP">AP</option>
-                                <option value="{{state.state}}" ng-repeat="state in states">{{state.state}}</option>
-                            </select>
-                            <label>{{regData.State}}</label>
-                        </div>
+
+                </tr>
+                <tr ng-show="!regform.Country.$error.required">
+                    <td><strong>State</strong></td>
+                    <td>
+                        <select ng-model="regData.State" required name="State" class="input-sm form-group input-position">
+                            <option value="">Select State</option>
+                            <option value="AP">AP</option>
+                            <option value="NewYork">NewYork</option>
+                        </select>
+                        <span class="error" ng-show="!regform.State.$dirty">required</span>
+
+
                     </td>
-                    <td></td>
                 </tr>
                 <tr>
-                  <td style="width:200px">
-                      <button class="btn btn-primary btn-success" type="submit" style="float:right">Registration</button>
-                     
-                  </td>
+                    <td style="width:200px">
+                        <button class="btn btn-primary btn-success" ng-disabled="regform.$invalid" type="submit" style="float:right" >Registration</button>
+
+                    </td>
                     <td>
                         <button class=" btn btn-warning" type="reset" style="float:left">Clear</button>
                     </td>
                 </tr>
             </table>
+            Status:{{datain}}
         </form>
     </div>
 </div>

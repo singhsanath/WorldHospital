@@ -21,11 +21,14 @@ namespace WorlHospital.Controllers
         }
         [AllowAnonymous]
         [HttpPost]
-        public JsonResult states(string country)
+        public JsonResult states(Locations country)
         {
-            var state = database.Location.Where(b=>b.country==country);
+            var state = database.Location.Where(b=>b.country==country.country);
+            //country.country = "India";
+            //country.state = "AP";
+            //country.StateID = "123";
             
-            return Json( state );
+            return Json(country  );
         }
     }
 }

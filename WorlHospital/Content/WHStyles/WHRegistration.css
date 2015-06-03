@@ -2,3 +2,11 @@
 margin-left:10px;
 
 }
+.error{
+    color:red;
+  
+   
+}
+input.ng-invalid{
+    border:1px solid red;
+}
