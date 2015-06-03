@@ -9,7 +9,7 @@ namespace WorlHospital.Controllers
 {
     public class AuthController : Controller
     {
-        public static int PID = 1;
+        public static int PID = 0;
         patientRegLogContext database = new patientRegLogContext( );
         //
         // GET: /Auth/
