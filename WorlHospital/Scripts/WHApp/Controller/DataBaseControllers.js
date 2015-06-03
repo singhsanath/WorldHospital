@@ -10,6 +10,15 @@ angular.module( "PatientAuth", [] ).controller( "PatientAuthController", functio
             console.log("Unsuccessfull");
         })
     }
+
+    $scope.loginSubmit = function ( loginData ) {
+        console.debug( loginData );
+        $http.post( 'Auth/Login', angular.toJson( loginData ) ).success( function ( data, status, header, config ) {
+
+
+        } )
+
+    }
     
 
 } )

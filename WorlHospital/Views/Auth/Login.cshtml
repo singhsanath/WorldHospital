@@ -11,18 +11,18 @@
                 </thead>
                 <tr>
                     <td><strong> Patient ID</strong></td>
-                    <td><input type=text class="input-lg form-group input-position" ng-model="loginData.PID" name="PID" placeholder="Patient Name" /></td>
+                    <td><input type=text class="input-lg form-group input-position" ng-model="loginData.PID" name="PID" required placeholder="Patient ID" d-validation ng-pattern="/^[0-9]{4,}$/" /></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>
                         <label>Password</label>
                     </td>
-                    <td><input type="password" ng-model="loginData.password" class="input-lg form-group input-position" /></td>
+                    <td><input type="Password" ng-model="loginData.Password" class="input-lg form-group input-position" required placeholder="Password" /></td>
                 </tr>
                 <tr>
                     <td style="width:100px">
-                        <button class="btn btn-primary btn-success" type="submit" style="float:right">Login</button>
+                        <button class="btn btn-primary btn-success" ng-disabled="loginform.$invalid" type="submit" style="float:right">Login</button>
 
                     </td>
                     <td>
